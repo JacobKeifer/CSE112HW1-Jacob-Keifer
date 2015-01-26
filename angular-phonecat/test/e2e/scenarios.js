@@ -75,8 +75,6 @@ describe('PhoneCat App', function() {
 
   describe('Phone detail view', function() {
 
-    var thumbnailList = element.all(by.repeater('img in phone.images'));
-
     beforeEach(function() {
       browser.get('app/index.html#/phones/nexus-s');
     });
@@ -84,10 +82,6 @@ describe('PhoneCat App', function() {
 
     it('should display nexus-s page', function() {
       expect(element(by.binding('phone.name')).getText()).toBe('Nexus S');
-    });
-
-    it('should display 4 thumbnail images on Nexus S page', function() {
-       expect(thumbnailList.length).toBe(4);
     });
   });
 });
